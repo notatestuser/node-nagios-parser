@@ -1,0 +1,26 @@
+{
+  "name": "nagios-json-parser",
+  "author": "Luke Plaster <notatestuser@gmail.com>",
+  "version": "0.1.0",
+  "description": "Converts a Nagios status page into JSON format for use in dashboards, monitors, etc.",
+  "homepage": "http://lukep.org",
+  "keywords": ["nagios", "parse", "json"],
+  "dependencies": {
+    "jsdom": "= 0.2.15",
+    "jquery": "= 1.7.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/notatestuser/nagios-json-parser.git"
+  },
+  "licenses": [{
+    "type": "MIT",
+    "url": "http://lp.mit-license.org/"
+  }],
+  "bugs" : {
+    "url" : "http://github.com/notatestuser/nagios-json-parser/issues"
+  },
+  "engines": {
+    "node": ">= 0.6.6"
+  }
+}
