@@ -9,7 +9,12 @@ Tested against Nagios 3.x.
 Usage
 -----
 
-Include the script location and call ```parse(url, callback, errorCallback)```:
+Install the dependencies we need:
+
+    $ cd node-nagios-parser
+    $ npm install
+
+Require the script and call ```parse(url, callback, errorCallback)```:
 
     var np = require('./nagiosparser').parser;
     np.parse(url.parse('http://user:pass@nagios.domain/nagios'),
