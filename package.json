@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/notatestuser/nagios-json-parser.git"
+    "url": "git://github.com/notatestuser/node-nagios-parser.git"
   },
   "licenses": [{
     "type": "MIT",
     "url": "http://lp.mit-license.org/"
   }],
   "bugs" : {
-    "url" : "http://github.com/notatestuser/nagios-json-parser/issues"
+    "url" : "http://github.com/notatestuser/node-nagios-parser/issues"
   },
   "engines": {
     "node": ">= 0.6.6"
