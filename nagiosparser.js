@@ -28,33 +28,39 @@ var parseDocument = function(textData, callback) {
                     // just another ordinary row
                     var $name = $this.find('a');
                     
-                    if ($name.length > 0) {
+                    if ($name.length) {
                         var serverAddr = $name.attr('title');
                         
-                        if (serverAddr != '' && serverAddr != undefined) {
+                        if (serverAddr) {
                             var serverName = $name.html();
                             
                             //console.info(' + ' + $name.html());
                             lastServerObj = parsedHash[serverName] = {};
                             
                             count++;
-                        } else {
-                            var serviceName = $name.html();
                             
-                            //console.info('\t' + serviceName);
-                            lastServerObj[serviceName] = {};
+                            // get the first service (same line than serverName)
+                            $name = $name.slice(1);
                             
-                            $this.children('td').each(function(tdIdx) {
-                                if (tdIdx > 1) {
-                                    //console.info('\t\t' + headings[tdIdx - 2] + ' ' + $(this).text());
-                                    lastServerObj[serviceName][headings[tdIdx - 2]] = $.trim($(this).text());
-                                }
-                            });
+                            // avoid getting icons
+                            if ($name.find('img').length) {
+                                $name = $name.slice(1);
+                            }
+                            
                         }
+	                    var serviceName = $name.html();
+	                    //console.info('\t' + serviceName);
+	                    lastServerObj[serviceName] = {};
+	                    
+	                    $this.children('td').each(function(tdIdx) {
+	                        if (tdIdx > 1) {
+	                            //console.info('\t\t' + headings[tdIdx - 2] + ' ' + $(this).text());
+	                            lastServerObj[serviceName][headings[tdIdx - 2]] = $.trim($(this).text());
+	                        }
+	                    });
                     }
                 }
             });
-            
             callback(parsedHash, count);
         });
 }
