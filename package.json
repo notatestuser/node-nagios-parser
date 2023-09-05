@@ -7,7 +7,7 @@
   "keywords": ["nagios", "parse", "json"],
   "dependencies": {
     "jsdom": "= 0.2.15",
-    "jquery": "= 1.7.3"
+    "jquery": "= 3.5.0"
   },
   "repository": {
     "type": "git",
